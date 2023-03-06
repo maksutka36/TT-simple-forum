@@ -1,0 +1,18 @@
+<div class="main">
+    <h2>Dodawanie żartu</h2>
+    <form [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Wybierz kategroię</mat-label>
+            <mat-select formControlName="category">
+            <mat-option *ngFor="let category of categories" [value]="category.id">
+                {{category.name}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <textarea formControlName="content" placeholder="Wprowadź treść żartu" cols="30" rows="10"></textarea>
+    </form>
+    <div class="actions">
+        <button class="active" mat-dialog-close>Anuluj</button>
+        <button class="primary" [mat-dialog-close]="true" (click)="addJoke()" [disabled]="form.invalid">Dodaj</button>
+    </div>
+</div>

@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &.primary {
+        background-color: #FFCC15;
+        border-radius: 8px;
+        padding: 10px 26px;
+    }
+    &.active {
+        color: #FFCC15;
+    }
+
+    &:disabled {
+        background-color: gainsboro;
+        cursor: not-allowed;
+    }
+}
+
+.dialog {
+    width: 50%;
+}
+
+.category {
+    display: flex;
+    justify-content: flex-end;
+    & > p:last-child {
+        margin-left: 4px;
+        font-weight: bold;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px 0;
+    & button:first-child {
+        margin-right: 24px;
+    }
+}

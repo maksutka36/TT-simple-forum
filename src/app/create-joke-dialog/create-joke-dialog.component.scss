@@ -1,0 +1,30 @@
+.main {
+    padding: 20px 32px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2{
+    font-family: 'Open Sans', sans-serif;
+}
+
+textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+::ng-deep mat-form-field {
+    & .mdc-notched-outline__leading{
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+
+    & .mdc-notched-outline__trailing {
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+}

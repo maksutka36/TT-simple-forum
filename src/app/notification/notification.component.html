@@ -1,0 +1,7 @@
+<div class="main">
+    <div class="container" *ngFor="let notification of notifications">
+        <button (click)="notifications.shift()"><mat-icon>close</mat-icon></button>
+        <p class="header">Sukces</p>
+        <p>{{ notification }}</p>
+    </div>
+</div>

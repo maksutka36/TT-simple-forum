@@ -1,0 +1,25 @@
+.main {
+    width: 60%;
+    margin: 10% 0 0 20%;
+}
+
+.card {
+    width: 321px;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 28px;
+}
+
+.container {
+    width: 768px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.warning {
+    background-color: #E44C4C;
+    color: #FFFFFFFF;
+    float: right;
+}
