@@ -1,0 +1,17 @@
+<div class="main">
+    <button (click)="addJoke()" class="primary">Dodaj</button>
+    <mat-spinner *ngIf="requestState === 'loading'"></mat-spinner>
+    <ng-container *ngIf="requestState === 'success'">
+        <div class="container" *ngIf="currentJoke !== undefined;else empty">
+            <div class="category">
+                <p>kategoria:</p>
+                <p>{{currentJoke.category | getCategory: categories}}</p>
+            </div>
+            <p>{{currentJoke!.content}}</p>
+        </div>
+        <button (click)="nextJoke()" *ngIf="currentJoke !== undefined" class="primary">Pokaż następny</button>
+        <ng-template #empty>
+            <p>Żadnych żartów((</p>
+        </ng-template>
+    </ng-container>
+</div>

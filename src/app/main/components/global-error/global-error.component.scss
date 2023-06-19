@@ -1,0 +1,20 @@
+.error {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 68, 68);
+    color: white;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

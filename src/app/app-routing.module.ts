@@ -1,26 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JokesComponent } from './jokes/jokes.component';
-import { MyJokesComponent } from './my-jokes/my-jokes.component';
+import { MainModule } from './main/main.module';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'my-jokes',
-        pathMatch: 'full',
-    },
-    {
-        path: 'my-jokes',
-        component: MyJokesComponent
-    },
-    {
-        path: 'jokes',
-        component: JokesComponent
-    },
+        path: 'main',
+        loadChildren: () => MainModule
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

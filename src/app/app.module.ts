@@ -4,37 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
-import { MyJokesComponent } from './my-jokes/my-jokes.component';
-import { JokesComponent } from './jokes/jokes.component';
-import { CreateJokeDialogComponent } from './create-joke-dialog/create-joke-dialog.component';
-import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDialogModule} from '@angular/material/dialog';
-import { NotificationComponent } from './notification/notification.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MainModule } from './main/main.module';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { JokesDatabaseService } from './databases/jokes-database.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    MyJokesComponent,
-    JokesComponent,
-    CreateJokeDialogComponent,
-    ConfirmationDialogComponent,
-    NotificationComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatDialogModule,
-    MatIconModule
+    BrowserAnimationsModule,
+    MainModule,
+    HttpClientInMemoryWebApiModule.forRoot(JokesDatabaseService)
   ],
   providers: [],
   bootstrap: [AppComponent]

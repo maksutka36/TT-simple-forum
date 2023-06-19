@@ -4,7 +4,7 @@
         <mat-form-field appearance="outline">
             <mat-label>Wybierz kategroię</mat-label>
             <mat-select formControlName="category">
-            <mat-option *ngFor="let category of categories" [value]="category.id">
+            <mat-option *ngFor="let category of categories$ | async" [value]="category.id">
                 {{category.name}}
             </mat-option>
             </mat-select>

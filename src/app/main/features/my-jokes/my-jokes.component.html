@@ -1,0 +1,19 @@
+<div class="main">
+    <button class="primary" (click)="addJoke()">Dodaj</button>
+    <mat-spinner *ngIf="requestState === 'loading'"></mat-spinner>
+    <ng-container *ngIf="requestState === 'success'">
+        <div class="container" *ngIf="jokes!.length > 0;else empty">
+            <div *ngFor="let joke of jokes; let i = index" class="card">
+                <div class="category">
+                    <p>kategoria:</p>
+                    <p>{{joke.category | getCategory: categories }}</p>
+                </div>
+                <p>{{joke.content}}</p>
+                <button (click)="deleteJoke(joke)" class="primary warning">Usuń</button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #empty>
+        <p>Żadnych żartów((</p>
+    </ng-template>
+</div>
