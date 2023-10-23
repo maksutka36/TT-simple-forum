@@ -13,6 +13,7 @@ export class NotificationService {
   constructor() { }
 
   sendNotification(message: string): void {
+    console.log(message)
     this.notification.next(message);
   }
 

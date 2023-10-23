@@ -6,6 +6,7 @@ import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/co
 import { filter, switchMap, Subject, takeUntil } from 'rxjs';
 import { CreateJokeDialogComponent } from '../../shared/create-joke-dialog/create-joke-dialog.component';
 import { Category } from '../../models/category.model';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-my-jokes',
@@ -19,7 +20,8 @@ export class MyJokesComponent implements OnInit, OnDestroy {
   private readonly till$ = new Subject<void>();
   constructor(
     private jokesService: JokesStorageService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -56,7 +58,9 @@ export class MyJokesComponent implements OnInit, OnDestroy {
       .open(CreateJokeDialogComponent, { panelClass: 'dialog' })
       .afterClosed()
       .pipe(takeUntil(this.till$))
-      .subscribe(() => this.getJokes());
+      .subscribe(() => {
+        this.notificationService.sendNotification("Żart został dodany!");
+        this.getJokes()});
   }
 
   getCategory(categoryId: string): string {
@@ -76,7 +80,10 @@ export class MyJokesComponent implements OnInit, OnDestroy {
         switchMap(() => this.jokesService.deleteJoke(joke)),
         takeUntil(this.till$)
       )
-      .subscribe(() => this.getJokes());
+      .subscribe(() => {
+        this.notificationService.sendNotification('Żart zostaw usunienty!');
+        this.getJokes();
+      });
   }
 
   ngOnDestroy(): void {

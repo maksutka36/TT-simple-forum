@@ -1,27 +1,21 @@
-# TTSimpleForum
+<h1>Simple forum for posting jokes</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+<h3>Page "My jokes"</h3>
 
-## Development server
+![Alt text](<readmePics/simple forum.png>)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h3>Page "Jokes"</h3>
 
-## Code scaffolding
+![Alt text](<readmePics/simple forum 1.png>)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<h3>Adding joke dialog</h3>
 
-## Build
+![Alt text](<readmePics/simple forum 2.png>)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<h3>Confirmation</h3>
 
-## Running unit tests
+![Alt text](<readmePics/simple forum 3.png>)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<h3>Notification</h3>
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Alt text](<readmePics/simple forum 4.png>)
